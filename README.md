@@ -2,6 +2,19 @@
 
 ## Description
 
+This role should help with installing Virtio Windows drivers:
+
+Virtio Network Driver (netkvm)
+Virtio Block Driver (viostor)
+QXL Graphics Driver (qxldod)
+VirtIO SCSI pass-through controller Driver (vioscsi)
+Baloon Driver (Balloon)
+Virtio RNG driver (viorng)
+Virtio serial driver (vioserial)
+Virtio Input driver (vioinput)
+pvpanic device driver (pvpanic)
+Qemu Guest Agent (qemu-ga-x64)
+
 ## Installation
 
 ```
