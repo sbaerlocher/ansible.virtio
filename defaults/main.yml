@@ -1,4 +1,6 @@
 ---
 # defaults file for sbaerlocher.virtio
 
-virtio_win_iso_url: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
+virtio_win_iso_url: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+virtio_win_iso_name: virtio-win.iso
+virtio_win_ovirt: false

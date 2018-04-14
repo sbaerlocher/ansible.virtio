@@ -1,2 +1,17 @@
 ---
 # handlers file for sbaerlocher.virtio
+
+- name: Unmount
+  win_disk_image:
+    image_path: "{{ ansible_env.TEMP }}\\{{ virtio_win_iso_name }}"
+    state: absent
+  when: win_disk_image.mount_path is defined
+
+- name: Delete downloaded
+  win_file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ ansible_env.TEMP }}\\redhat_balloon.cer"
+    - "{{ ansible_env.TEMP }}\\redhat_qxldod.cer"
+    - "{{ ansible_env.TEMP }}\\{{ virtio_win_iso_name }}"
