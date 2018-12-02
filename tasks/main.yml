@@ -17,14 +17,14 @@
 
 - name: Get list of all drivers
   win_command: driverquery /V
-  changed_when: False
+  changed_when: false
   register: driver_list
   tags:
     - packages
 
 - name: Check if Red Hat certificate is not already installed
   win_shell: 'Get-ChildItem -Path Cert:\LocalMachine\TrustedPublisher'
-  changed_when: False
+  changed_when: false
   register: cert_check
   tags:
     - packages
@@ -32,7 +32,7 @@
 - name: Download {{ virtio_win_iso_name }}
   win_get_url:
     url: "{{ virtio_win_iso_url }}"
-    force: no
+    force: false
     dest: "{{ ansible_env.TEMP }}\\{{ virtio_win_iso_name }}"
   notify:
     - Delete downloaded
