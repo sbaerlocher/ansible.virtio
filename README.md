@@ -50,6 +50,10 @@ Windows 64 bit (amd64) (x64)
 
 * inital commit
 
+### 1.1.0
+
+* add Support Windows Server 2019
+
 ## Author
 
 * [Simon Bärlocher](https://sbaerlocher.ch)
