@@ -15,6 +15,19 @@
     - configuration
     - packages
 
+- name: check new version of virtio
+  shell: wget {{ virtio_changelog }} -q -O - | {{ virtio_changelog_query }}
+  register: register_virtio_version
+  delegate_to: localhost
+
+- name: setup facts virtio
+  setup:
+    fact_path: "{{ virtio_win_facts }}"
+
+- name: set virtio version facts
+  set_fact:
+    virtio_version: "{{ register_virtio_version.stdout }}"
+
 - name: Get list of all drivers
   win_command: driverquery /V
   changed_when: false
