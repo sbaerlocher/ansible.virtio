@@ -2,18 +2,7 @@
 
 ## Description
 
-This role should help with installing Virtio Windows drivers:
-
-Virtio Network Driver (netkvm)
-Virtio Block Driver (viostor)
-QXL Graphics Driver (qxldod)
-VirtIO SCSI pass-through controller Driver (vioscsi)
-Baloon Driver (Balloon)
-Virtio RNG driver (viorng)
-Virtio serial driver (vioserial)
-Virtio Input driver (vioinput)
-pvpanic device driver (pvpanic)
-Qemu Guest Agent (qemu-ga-x64)
+This Ansible role installs the VirtIO driver and updates it also for new releases under Windows.
 
 ## Installation
 
@@ -23,7 +12,7 @@ ansible-galaxy install sbaerlocher.virtio
 
 ## Requirements
 
-Ansible 2.4 or later
+None
 
 ## Role Variables
 
@@ -34,7 +23,7 @@ Ansible 2.4 or later
 
 ## Dependencies
 
-Windows 64 bit (amd64) (x64)
+None
 
 ## Example Playbook
 
@@ -46,13 +35,13 @@ Windows 64 bit (amd64) (x64)
 
 ## Changelog
 
-### 1.0
-
-* inital commit
-
 ### 1.1.0
 
 * add Support Windows Server 2019
+
+### 1.0.0
+
+* inital commit
 
 ## Author
 

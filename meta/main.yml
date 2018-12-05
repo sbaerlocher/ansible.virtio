@@ -1,11 +1,11 @@
 ---
 
 galaxy_info:
-  role_name: virtio
-  author: Simon Baerlocher <sbaerlocher@sbaerlocher.ch
-  description: Ansible role to install VirtIO drivers for Windows
-  license: "license (MIT)"
-  min_ansible_version: 2.4
+  author: "Simon Baerlocher"
+  company: "sbaerlo.ch/er"
+  description: "This Ansible role installs the VirtIO driver and updates it also for new releases under Windows."
+  license: MIT
+  min_ansible_version: 2.5
   platforms:
     - name: Windows
       versions:
