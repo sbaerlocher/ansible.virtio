@@ -16,8 +16,10 @@
     - packages
 
 - name: check new version of virtio
-  shell: wget {{ virtio_changelog }} -q -O - | {{ virtio_changelog_query }}
-  register: register_virtio_version
+  uri:
+    url: "{{ virtio_changelog }}"
+    return_content: true
+  register: register_virtio_changelog
   delegate_to: localhost
 
 - name: setup facts virtio
@@ -26,7 +28,7 @@
 
 - name: set virtio version facts
   set_fact:
-    virtio_version: "{{ register_virtio_version.stdout }}"
+    virtio_version: "{{ register_virtio_changelog.content | regex_search(virtio_changelog_query) }}"
 
 - block:
 
@@ -143,7 +145,7 @@
 
     - name: Create fact for VirtIO
       win_copy:
-        content: "echo '{{ register_virtio_version.stdout }}'"
+        content: "echo '{{ virtio_version }}'"
         dest: "C:\\Support\\facts.d\\virtio_version.ps1"
 
-  when: (ansible_virtio_version | default('0.0.0')) != virtio_version
+  when: (ansible_virtio_version | default()) != virtio_version
