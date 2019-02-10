@@ -146,6 +146,6 @@
     - name: Create fact for VirtIO
       win_copy:
         content: "echo '{{ virtio_version }}'"
-        dest: "C:\\Support\\facts.d\\virtio_version.ps1"
+        dest: "{{ virtio_win_facts }}\\virtio_version.ps1"
 
   when: (ansible_virtio_version | default()) != virtio_version
