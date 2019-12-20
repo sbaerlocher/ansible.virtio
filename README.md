@@ -1,5 +1,7 @@
 # Ansible Role: virtio
 
+[![Build Status](https://img.shields.io/travis/sbaerlocher/ansible.virtio.svg?branch=master&style=popout-square)](https://travis-ci.org/sbaerlocher/ansible.virtio) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=popout-square)](https://sbaerlo.ch/licence) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-virtio-blue.svg?style=popout-square)](https://galaxy.ansible.com/sbaerlocher/virtio) [![Ansible Role](https://img.shields.io/ansible/role/d/25032.svg?style=popout-square)](https://galaxy.ansible.com/sbaerlocher/virtio)
+
 ## Description
 
 This Ansible role installs the VirtIO driver and updates it also for new releases under Windows.
