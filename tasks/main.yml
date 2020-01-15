@@ -22,6 +22,12 @@
   register: register_virtio_changelog
   delegate_to: localhost
 
+- name: create facts virtio dir
+  win_file:
+    path: '{{ virtio_win_facts }}'
+    state: directory
+  when: ansible_os_family == 'Windows'
+
 - name: setup facts virtio
   setup:
     fact_path: '{{ virtio_win_facts }}'
